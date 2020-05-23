@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>GasoleoToday | Preços da Gasolina na Madeira</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <a href="/" class="logo"><strong>GasoleoToday</strong></a>
+      </header>
+
+      <!-- Banner -->
+      <section id="banner" class="major">
+        <div class="inner">
+          <header class="major">
+            <h1>Olá, estes são os preços para esta semana.</h1>
+          </header>
+          <div class="content">
+            <p class="date">
+              Desde <%= startCurWeek %> até <%= endCurWeek %>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- One -->
+        <section id="one" class="tiles">
+          <article>
+            <span class="image">
+              <img src="images/gas01.jpg" alt="Preço Gasolina IO95" />
+            </span>
+            <header class="major">
+              <h3>Gasolina IO95</h3>
+              <p class="price"><%= curPrices[0] %>€</p>
+            </header>
+          </article>
+          <article>
+            <span class="image">
+              <img src="images/gas02.jpg" alt="Preço Gasoleo Rodoviário" />
+            </span>
+            <header class="major">
+              <h3>Gasóleo Rodoviário</h3>
+              <p class="price"><%= curPrices[1] %>€</p>
+            </header>
+          </article>
+          <article>
+            <span class="image">
+              <img src="images/gas03.jpg" alt="Preço Gasoleo Colorido" />
+            </span>
+            <header class="major">
+              <h3>Gasóleo Colorido</h3>
+              <p class="price"><%= curPrices[2] %>€</p>
+            </header>
+          </article>
+        </section>
+        <section id="two">
+          <div class="inner">
+            <header class="major">
+              <h2>Olhando para o futuro?</h2>
+            </header>
+            <p>
+              Aqui estão os preços para a próxima semana.
+            </p>
+            <p class="date">
+              Desde <%= startNextWeek %> até <%= endNextWeek %>.
+            </p>
+          </div>
+        </section>
+        <section id="three" class="tiles">
+          <article>
+            <span class="image">
+              <img src="images/gas04.jpg" alt="Preço Gasolina IO95" />
+            </span>
+            <header class="major">
+              <h3>Gasolina IO95</h3>
+              <p class="price"><%= nextWeekPrices[0] %>€</p>
+            </header>
+          </article>
+          <article>
+            <span class="image">
+              <img src="images/gas05.jpg" alt="Preço Gasóleo Rodoviário" />
+            </span>
+            <header class="major">
+              <h3>Gasóleo Rodoviário</h3>
+              <p class="price"><%= nextWeekPrices[1] %>€</p>
+            </header>
+          </article>
+          <article>
+            <span class="image">
+              <img src="images/gas06.jpg" alt="Preço Gasóleo Colorido" />
+            </span>
+            <header class="major">
+              <h3>Gasóleo Colorido</h3>
+              <p class="price"><%= nextWeekPrices[2] %>€</p>
+            </header>
+          </article>
+        </section>
+
+        <!-- Two -->
+        <section id="two">
+          <div class="inner">
+            <header class="major">
+              <h2>Como Funciona</h2>
+            </header>
+            <p>
+              Todas as semanas o preço do combustível é avaliado na Madeira e a
+              partir da meia-noite de domingo o preço diminui ou aumenta. Uma
+              das vantagens deste sistema é que o preço é o mesmo em todas as
+              opções, então você não precisa procurar por um preço melhor.
+            </p>
+            <p>
+              Esta foi uma decisão tomada pelo Governo Regional para acabar com
+              a liberalização dos combustíveis, seguindo o modelo que já estava
+              em vigor nos Açores. A medida de fixação administrativa dos preços
+              foi justificada no dia 31 de Julho de 2008 pelo presidente do
+              Governo Regional, Alberto João Jardim, com a 'atitude colonial' da
+              Galp.
+            </p>
+            <ul class="actions">
+              <li>
+                <a href="/como-funciona" class="button next">Ver Mais</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="inner">
+          <section class="logo-split">
+            <a href="index.html" class="logo-big"
+              ><strong>GasoleoToday</strong></a
+            >
+          </section>
+          <section class="split">
+            <section>
+              <div class="contact-method">
+                <span class="icon solid alt fa-envelope"></span>
+                <h3>Email</h3>
+                <a href="mailto:cpiresdev@gmail.com">cpiresdev@gmail.com</a>
+              </div>
+            </section>
+            <section>
+              <div class="contact-method">
+                <span class="icon solid alt fa-globe"></span>
+                <h3>
+                  <a href="https://www.madeira.gov.pt/drett/"
+                    >Direção Regional de Economia e Transportes Terrestres</a
+                  >
+                </h3>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li>
+              <a
+                href="https://twitter.com/terraextra"
+                class="icon brands alt fa-twitter"
+                ><span class="label">Twitter</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/Extraterra1"
+                class="icon brands alt fa-github"
+                ><span class="label">GitHub</span></a
+              >
+            </li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; GasoleoToday</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
