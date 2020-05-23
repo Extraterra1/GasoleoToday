@@ -51,6 +51,6 @@ app.get("/como-funciona", (req, res) => {
   res.render("landing");
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("server listening");
 });
