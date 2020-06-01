@@ -30,7 +30,11 @@
       <section id="banner" class="major">
         <div class="inner">
           <header class="major">
-            <h1>Olá, estes são os preços para esta semana.</h1>
+            <h1>
+              <% if (pricesDelayed) { %> Olá, ainda estamos a espera dos novos
+              preços. <% }else{ %> Olá, estes são os preços para esta semana. <%
+              } %>
+            </h1>
           </header>
           <div class="content">
             <p class="date">
@@ -72,14 +76,19 @@
             </header>
           </article>
         </section>
-        <% if (nextWeekPrices.length > 0) { %>
+        <% if (weekStage === 1 || weekStage === 0 && nextWeekPrices.length > 0)
+        { %>
         <section id="two">
           <div class="inner">
             <header class="major">
-              <h2>Olhando para o futuro?</h2>
+              <h2>
+                <%= !weekStage ? 'Olhando para o futuro?' : 'Um vislumbre do' +
+                ' passado.' %>
+              </h2>
             </header>
             <p>
-              Aqui estão os preços para a próxima semana.
+              <%= !weekStage ? 'Aqui estão os preços para a próxima semana.' :
+              'Aqui estão os preços da semana passada.' %>
             </p>
             <p class="date">
               Desde <%= startNextWeek %> até <%= endNextWeek %>.
