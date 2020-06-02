@@ -11,6 +11,12 @@ const visitSchema = new mongoose.Schema({
   path: {
     type: String,
   },
+  city: {
+    type: String,
+  },
+  country: {
+    type: String,
+  },
 });
 
 const Visit = mongoose.model("Visit", visitSchema);

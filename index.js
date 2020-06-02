@@ -1,11 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const expressip = require("express-ip");
 const app = express();
 const main = require("./controllers/main");
 const storeVisits = require("./controllers/storeVisits");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(expressip().getIpInfoMiddleware);
 
 mongoose.connect(
   "mongodb+srv://admin:i64AqRzBhmO3rXBU@cluster0-4chch.mongodb.net/Visits?retryWrites=true&w=majority",
