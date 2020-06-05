@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(expressip().getIpInfoMiddleware);
 
 mongoose.connect(
-  "mongodb+srv://admin:i64AqRzBhmO3rXBU@cluster0-4chch.mongodb.net/Visits?retryWrites=true&w=majority",
+  url,
   {
     useNewUrlParser: true,
     useCreateIndex: true,
