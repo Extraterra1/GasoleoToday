@@ -10,16 +10,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(expressip().getIpInfoMiddleware);
 
-<<<<<<< HEAD
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
-=======
 mongoose.connect(
-  url,
+  "mongodb+srv://admin:i64AqRzBhmO3rXBU@cluster0-4chch.mongodb.net/GasHistory?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -27,7 +19,6 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 );
->>>>>>> c56aca606878f63dfdb4b0023452ac155803ccc4
 
 app.get("/", storeVisits, main);
 
