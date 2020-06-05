@@ -10,15 +10,12 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(expressip().getIpInfoMiddleware);
 
-mongoose.connect(
-  "mongodb+srv://admin:i64AqRzBhmO3rXBU@cluster0-4chch.mongodb.net/GasHistory?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+});
 
 app.get("/", storeVisits, main);
 
