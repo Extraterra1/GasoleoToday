@@ -2545,6 +2545,7 @@ table tbody tr:nth-child(2n + 1) {
 
 table td {
   padding: 0.75em 0.75em;
+  text-align: center;
 }
 
 table th {
@@ -4059,4 +4060,25 @@ body.is-menu-visible #menu .inner {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.years-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#year-container {
+  justify-content: center;
+  align-items: center;
+}
+
+#historico {
+  width: 100%;
+  background-color: #444964;
+}
+
+#historico:before {
+  background-color: #4a2a3f;
 }

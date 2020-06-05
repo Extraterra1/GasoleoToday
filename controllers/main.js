@@ -63,6 +63,7 @@ const main = async (req, res) => {
     startNextWeek,
     endNextWeek,
     pricesDelayed,
+    year: moment().year(),
   });
 };
 

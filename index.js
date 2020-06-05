@@ -4,13 +4,14 @@ const expressip = require("express-ip");
 const app = express();
 const main = require("./controllers/main");
 const storeVisits = require("./controllers/storeVisits");
+const getHistory = require("./controllers/getHistory");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(expressip().getIpInfoMiddleware);
 
 mongoose.connect(
-  "mongodb+srv://admin:i64AqRzBhmO3rXBU@cluster0-4chch.mongodb.net/Visits?retryWrites=true&w=majority",
+  "mongodb+srv://admin:i64AqRzBhmO3rXBU@cluster0-4chch.mongodb.net/GasHistory?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -24,6 +25,8 @@ app.get("/", storeVisits, main);
 app.get("/como-funciona", storeVisits, (req, res) => {
   res.render("landing");
 });
+
+app.get("/historico/:year", storeVisits, getHistory);
 
 app.get("*", storeVisits, (req, res) => {
   res.redirect("/");
