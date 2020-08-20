@@ -12,11 +12,7 @@ const main = async (req, res) => {
   //   }
   // });
   const text = $("#divConteudo p").text();
-  const initialDate = $("#divConteudo p strong")
-    .first()
-    .text()
-    .replace(/\./g, "/")
-    .split(" a ");
+  const initialDate = $("#divConteudo span p").first().text().split("\n").slice(0, 1).toString().replace(/\./g, "/").split(" a ");
   const x = text.match(/\d+(?:\.\d+)?/g);
   let prices = [];
   x.forEach((e) => {
