@@ -6,13 +6,13 @@ const main = async (req, res) => {
   const response = await axios.get("https://www.madeira.gov.pt/drett/");
   const html = response.data;
   const $ = cheerio.load(html);
-  // $("#divConteudo p").each(function (i, obj) {
-  //   if ($(this).text().endsWith("€")) {
-  //     console.log($(this).text());
-  //   }
-  // });
   const text = $("#divConteudo p").text();
-  const initialDate = $("#divConteudo span p:nth-child(2)").first().text().split("\n").slice(0, 1).toString().replace(/\./g, "/").split(" a ");
+  const initialDate = $("#divConteudo span p")
+    .text()
+    .match(/\d{2}\.\d{2}\.\d{4}/g)
+    .toString()
+    .replace(/\./g, "/")
+    .split(",");
   const x = text.match(/\d+(?:\.\d+)?/g);
   let prices = [];
   x.forEach((e) => {
