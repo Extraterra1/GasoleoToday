@@ -26,18 +26,14 @@ const main = async (req, res) => {
   const week = moment(initialDate[0], "DD/MM/YYYY").isoWeek();
   let startCurWeek = initialDate[0];
   let endCurWeek = initialDate[1];
-  let startNextWeek = moment()
-    .day("Monday")
-    .isoWeek(week + 1)
-    .format("DD/MM/YYYY");
-  let endNextWeek = moment()
-    .day("Sunday")
-    .isoWeek(week + 1)
-    .format("DD/MM/YYYY");
+  let startNextWeek = initialDate[2];
+  let endNextWeek = initialDate[3];
+
   let weekStage = 0;
   let pricesDelayed = false;
   // If first week displayed on DRETT's site is not current but there are next week prices
-  if (week !== moment().isoWeek() && nextWeekPrices.length > 0) {
+  //if Current date is not between said dates
+  if (!moment().isBetween(moment(initialDate[0], "DD/MM/YYYY"), moment(initialDate[1], "DD/MM/YYYY"), undefined, "[]") && nextWeekPrices.length > 0) {
     weekStage = 1;
     startCurWeek = startNextWeek;
     endCurWeek = endNextWeek;
@@ -46,7 +42,7 @@ const main = async (req, res) => {
     curPrices = prices.slice(3, 6);
     nextWeekPrices = prices.slice(0, 3);
     // If first week displayed on DRETT's site is not current and there are no next week prices
-  } else if (week != moment().isoWeek() && nextWeekPrices.length === 0) {
+  } else if (!moment().isBetween(moment(initialDate[0], "DD/MM/YYYY"), moment(initialDate[1], "DD/MM/YYYY"), undefined, "[]") && nextWeekPrices.length === 0) {
     weekStage = 2;
     pricesDelayed = true;
   }
